@@ -1,0 +1,10 @@
+{
+  "pages": [
+    {
+      "path": "page-1.md"
+    }
+  ],
+  "assets": [
+    "assets"
+  ]
+}

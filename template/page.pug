@@ -1,0 +1,73 @@
+doctype html
+meta(charset="utf-8")
+meta(name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover")
+title=meta.title
+if meta.description
+  meta(name="description" content=meta.description)
+each alternateLanguage in meta.alternateLanguages
+  link(rel="alternate" hreflang=alternateLanguage.hreflang href=alternateLanguage.href)
+meta(property="og:url" content=meta.openGraph.url)
+meta(property="og:type" content="website")
+meta(property="og:title" content=meta.openGraph.title)
+if meta.openGraph.description
+  meta(property="og:description" content=meta.openGraph.description)
+if meta.openGraph.imagePath
+  meta(property="og:image" content=meta.openGraph.imagePath)
+if appleWebApplication.title
+  meta(name="apple-mobile-web-app-title" content=appleWebApplication.title)
+if appleWebApplication.appleTouchIconPath
+  link(rel="apple-touch-icon" href=appleWebApplication.appleTouchIconPath)
+if pinnedTabIcon.pinnedTabIconPath && pinnedTabIcon.color
+  link(rel="mask-icon" href=pinnedTabIcon.pinnedTabIconPath color=pinnedTabIcon.color)
+if webAppManifestPath
+  link(rel="manifest" href=webAppManifestPath)
+each stylesheet in stylesheets
+  link(rel="stylesheet" type="text/css" href=stylesheet)
+each script in scripts
+  script(src=script)
+link(rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/styles/a11y-dark.min.css")
+body
+  nav.navbar.navbar-fixed-md.navbar-expand-md
+    .navbar-container-fluid
+      .navbar-header
+        .container-fluid
+          a.navbar-brand(href=logo.href)
+            img(src=logo.imagePath alt=meta.title)
+            =logo.value
+          button.navbar-toggle(target="navbarSupportedContent navigationSidebar" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="toggle navigation")
+            .navbar-toggle-icon
+      #navbarSupportedContent.navbar-body
+        .container-fluid
+          ul.menu.navbar-menu
+            each link in links
+              li.menu-item
+                a.menu-link(href=link.href)=link.name
+            if releaseDropdown
+              li.menu-item.dropdown
+                button#releaseDropdownButton.menu-link.dropdown-toggle(aria-haspopup="true" aria-expanded="false")=releaseDropdown.currentRelease
+                .dropdown-content(aria-labelledby="releaseDropdownButton")
+                  ul.menu
+                    each release in releaseDropdown.releases
+                      li.menu-item
+                        a.menu-link(class={"menu-link-active": release.name === releaseDropdown.currentRelease} href=release.href)=release.name
+            if languageDropdown
+              li.menu-item.dropdown
+                button#languagesDropdownButton.menu-link.dropdown-toggle(aria-haspopup="true" aria-expanded="false")=languageDropdown.currentLanguage
+                .dropdown-content(aria-labelledby="languagesDropdownButton")
+                  ul.menu
+                    each language in languageDropdown.languages
+                      li.menu-item
+                        a.menu-link(class={"menu-link-active": language.name === languageDropdown.currentLanguage} href=language.href)=language.name
+  .safe-area-inset-x
+    aside#navigationSidebar.sidebar.sidebar-under-navbar
+      .container-fluid
+        mixin pageMenu(pages)
+          if pages && pages.length
+            ul.menu
+              each page in pages
+                li.menu-item
+                  a.menu-link(class={"menu-link-active": navigation.currentPage.destinationPath === page.destinationPath} href=page.href)=page.title
+                  +pageMenu(page.pages)
+        +pageMenu(navigation.pages)
+    .container-under-navbar-fixed-md.container-beside-sidebar
+      .markdown.container!=content

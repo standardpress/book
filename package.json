@@ -1,0 +1,79 @@
+{
+  "name": "@standardpress/book",
+  "description": "Publish long-form content.",
+  "license": "MIT",
+  "author": "Jason Nam <contact@jasonnam.com> (https://jasonnam.com)",
+  "homepage": "https://github.com/standardpress/book",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/standardpress/book"
+  },
+  "bugs": {
+    "url": "https://github.com/standardpress/book/issues"
+  },
+  "version": "0.1.0",
+  "main": "lib/api.js",
+  "bin": {
+    "book": "bin/cli.js"
+  },
+  "files": [
+    "bin/*.js",
+    "lib/*.js",
+    "template/*.{scss,pug}"
+  ],
+  "scripts": {
+    "lint": "run-p lint:*",
+    "lint:js": "eslint lib bin __tests__ __mocks__",
+    "lint:scss": "stylelint template/book.scss",
+    "test": "jest"
+  },
+  "dependencies": {
+    "@usecamo/camo": "^0.1.2",
+    "acorn": "^6.0.0",
+    "array-flatten": "^2.1.2",
+    "browser-sync": "^2.26.7",
+    "commander": "^2.20.0",
+    "deep-for-each": "^3.0.0",
+    "get-port": "^5.0.0",
+    "highlight.js": "^9.15.8",
+    "jsonfile": "^5.0.0",
+    "marked": "^0.6.2",
+    "mkdirp": "^0.5.1",
+    "nanoid": "^2.0.3",
+    "node-sass": "^4.12.0",
+    "pug": "^2.0.3",
+    "recursive-readdir": "^2.2.2",
+    "replace-ext": "^1.0.0",
+    "rollup": "^1.12.4",
+    "sharp": "^0.22.1",
+    "terser": "^3.17.0"
+  },
+  "devDependencies": {
+    "eslint": "^5.16.0",
+    "eslint-config-standardpress": "^0.1.1",
+    "eslint-plugin-eslint-comments": "^3.1.2",
+    "eslint-plugin-jest": "^22.7.1",
+    "eslint-plugin-node": "^8.0.1",
+    "eslint-plugin-sort-requires": "^2.1.0",
+    "jest": "^24.8.0",
+    "npm-run-all": "^4.1.5",
+    "stylelint": "^9.10.1",
+    "stylelint-config-standard": "^18.3.0",
+    "stylelint-config-standardpress": "^0.1.1",
+    "stylelint-order": "^2.2.1",
+    "stylelint-scss": "^3.8.0"
+  },
+  "keywords": [
+    "book",
+    "content",
+    "doc",
+    "documentation",
+    "publish"
+  ],
+  "engines": {
+    "node": ">=7.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

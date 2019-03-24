@@ -1,0 +1,27 @@
+@import "../node_modules/@usecamo/camo/scss/variables/separator";
+@import "../node_modules/@usecamo/camo/scss/variables/spacer";
+
+.sidebar {
+  .menu {
+    .menu {
+      padding-top: $spacer-4;
+      padding-left: $spacer-4;
+    }
+
+    .menu-item {
+      + .menu-item {
+        margin-top: $spacer-4;
+      }
+    }
+  }
+
+  .menu:first-child {
+    padding: $spacer-5 0;
+  }
+}
+
+.markdown {
+  max-width: 1000px;
+  padding-top: $spacer-6;
+  padding-bottom: $spacer-8;
+}
