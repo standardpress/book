@@ -2,7 +2,6 @@
 
 [![npm version](https://img.shields.io/npm/v/@standardpress/book.svg)](https://npmjs.com/package/@standardpress/book)
 [![travis-ci build status](https://travis-ci.com/standardpress/book.svg?branch=master)](https://travis-ci.com/standardpress/book)
-[![appveyor build status](https://ci.appveyor.com/api/projects/status/03b2cd89l4a56e6s/branch/master?svg=true)](https://ci.appveyor.com/project/jasonnam/book/branch/master)
 
 Publish long-form content.
 
