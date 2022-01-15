@@ -37,7 +37,7 @@
     "get-port": "^5.0.0",
     "highlight.js": "^9.15.8",
     "jsonfile": "^5.0.0",
-    "marked": "^0.6.2",
+    "marked": "^4.0.10",
     "mkdirp": "^0.5.1",
     "nanoid": "^2.0.3",
     "node-sass": "^4.12.0",
