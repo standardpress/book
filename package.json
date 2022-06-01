@@ -45,7 +45,7 @@
     "recursive-readdir": "^2.2.2",
     "replace-ext": "^1.0.0",
     "rollup": "^1.12.4",
-    "sharp": "^0.22.1",
+    "sharp": "^0.30.5",
     "terser": "^3.17.0"
   },
   "devDependencies": {
