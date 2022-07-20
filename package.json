@@ -46,7 +46,7 @@
     "replace-ext": "^1.0.0",
     "rollup": "^1.12.4",
     "sharp": "^0.22.1",
-    "terser": "^3.17.0"
+    "terser": "^4.8.1"
   },
   "devDependencies": {
     "eslint": "^5.16.0",
